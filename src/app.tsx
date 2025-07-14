@@ -14,7 +14,7 @@ import Results from "./pages/results";
 import Test from "./pages/tests/components/test";
 import { Login } from "./pages/login";
 import { Register } from "./pages/register";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import type { RootState } from "./redux/store";
 import User from "./pages/user/index";
 import { useEffect } from "react";
@@ -33,13 +33,11 @@ import {
   FiBookOpen,
   FiLogOut,
 } from "react-icons/fi";
-import { logout } from "./redux/reducers/user";
 
 export default function App() {
   const { user } = useSelector((state: RootState) => state.user);
   const navigate = useNavigate();
   const location = useLocation();
-  const dispatch = useDispatch();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const userJson = localStorage.getItem("user");
@@ -51,12 +49,6 @@ export default function App() {
     }
     if (user) localStorage.setItem("user", `${JSON.stringify(user)}`);
   }, [user]);
-
-  function signOut() {
-    dispatch(logout());
-    navigate("/");
-    localStorage.removeItem("user");
-  }
 
   useEffect(() => {
     setMobileMenuOpen(false);
