@@ -5,12 +5,12 @@ import { getStorage } from "firebase/storage";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDfWzvmRhtPdqw62XOjZK5IcO2ADMwqIwE",
-    authDomain: "quiz-app-dceee.firebaseapp.com",
-    projectId: "quiz-app-dceee",
-    storageBucket: "quiz-app-dceee.firebasestorage.app",
-    messagingSenderId: "208760921957",
-    appId: "1:208760921957:web:2385d9b38c8d8bd8ebcb8c",
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket:import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID,
     measurementId: "G-6EMH04W9DX"
 };
 
